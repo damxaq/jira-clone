@@ -2,6 +2,7 @@
   flex-grow: 1;
   margin: 1rem 0;
   text-align: center;
+  max-width: 33%;
 }
 
 .column-container:not(:last-child) {
@@ -15,8 +16,8 @@
 .column-content {
   height: 90%;
   overflow-y: scroll;
-  align-items: center;
   overflow-x: hidden;
+  text-align: left;
 }
 
 .column-content > * {

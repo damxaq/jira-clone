@@ -1,6 +1,6 @@
 import requests from "./requests";
 import axios from "axios";
-import { Todo } from "../models/todo";
+import { Todo, TodoStatus } from "../models/todo";
 
 export const fetchTodosWithLimit = async () => {
   return axios
@@ -8,7 +8,7 @@ export const fetchTodosWithLimit = async () => {
     .then((response) => {
       const data = response.data as Array<Todo>;
       const todosData = data.map((todo: Todo) => {
-        return { id: todo.id, title: todo.title };
+        return { id: todo.id, title: todo.title, status: TodoStatus.TODO };
       });
       return todosData;
     })

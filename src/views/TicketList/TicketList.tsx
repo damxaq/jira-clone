@@ -1,18 +1,21 @@
 import React from "react";
 import "./ticketList.css";
 import TodoCard from "../../components/TodoCard/TodoCard";
+import { Todo } from "../../models/todo";
 
-const TicketList = () => {
+interface PropTypes {
+  todos?: Array<Todo>;
+}
+
+const TicketList = ({ todos }: PropTypes) => {
   return (
     <div>
       <header className="section-header">Ticket List</header>
       <div className="tickets-frame">
-        <TodoCard />
-        <TodoCard />
-        <TodoCard />
-        <TodoCard />
-        <TodoCard />
-        <TodoCard />
+        {todos &&
+          todos.map((todo) => (
+            <TodoCard key={todo.id} todo={todo} fullCard={true} />
+          ))}
       </div>
     </div>
   );

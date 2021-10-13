@@ -20,8 +20,8 @@ function App() {
 
   return (
     <div className="main-container">
-      <TicketList />
-      <Board />
+      <TicketList todos={todos} />
+      <Board todos={todos} />
     </div>
   );
 }
