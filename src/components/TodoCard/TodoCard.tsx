@@ -1,6 +1,6 @@
-import React from "react";
 import "./todoCard.css";
-import { Todo } from "../../models/todo";
+import { Todo, TodoStatus, getNextStatus } from "../../models/todo";
+import { useGlobalContext } from "../../App";
 
 interface PropTypes {
   todo: Todo;
@@ -8,10 +8,24 @@ interface PropTypes {
 }
 
 const TodoCard = ({ todo, fullCard }: PropTypes) => {
+  const { todos, setTodos } = useGlobalContext();
+  const { status, title, id } = todo;
+
+  const handleChangeStatus = () => {
+    if (status !== TodoStatus.DONE) {
+      const newStatus = getNextStatus(status);
+      setTodos(
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, status: newStatus } : todo
+        )
+      );
+    }
+  };
+
   return (
-    <div className="card-container">
-      <div className="title">{todo.title}</div>
-      {fullCard && <div>{todo.status}</div>}
+    <div className="card-container" onClick={handleChangeStatus}>
+      <div className="title">{title}</div>
+      {fullCard && <div>{status}</div>}
     </div>
   );
 };

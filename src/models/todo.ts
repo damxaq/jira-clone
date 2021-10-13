@@ -9,3 +9,9 @@ export type Todo = {
   title: string;
   status: TodoStatus;
 };
+
+export const getNextStatus = (status: TodoStatus) => {
+  if (status === TodoStatus.TODO) return TodoStatus.IN_PROGRESS;
+  if (status === TodoStatus.IN_PROGRESS) return TodoStatus.DONE;
+  return TodoStatus.DONE;
+};

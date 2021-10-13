@@ -1,13 +1,10 @@
-import React from "react";
 import "./ticketList.css";
 import TodoCard from "../../components/TodoCard/TodoCard";
-import { Todo } from "../../models/todo";
+import { useGlobalContext } from "../../App";
 
-interface PropTypes {
-  todos?: Array<Todo>;
-}
+const TicketList = () => {
+  const { todos } = useGlobalContext();
 
-const TicketList = ({ todos }: PropTypes) => {
   return (
     <div>
       <header className="section-header">Ticket List</header>

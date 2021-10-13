@@ -1,13 +1,11 @@
-import React from "react";
 import "./board.css";
 import BoardColumn from "../../components/BoardColumn/BoardColumn";
-import { Todo, TodoStatus } from "../../models/todo";
+import { TodoStatus } from "../../models/todo";
+import { useGlobalContext } from "../../App";
 
-interface PropTypes {
-  todos?: Array<Todo>;
-}
+const Board = () => {
+  const { todos } = useGlobalContext();
 
-const Board = ({ todos }: PropTypes) => {
   return (
     <div>
       <header className="section-header">Board</header>
