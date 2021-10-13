@@ -1,0 +1,7 @@
+.board-frame {
+  display: flex;
+  border: 1px solid rebeccapurple;
+  height: 75%;
+  margin: 1rem;
+  min-width: 460px;
+}

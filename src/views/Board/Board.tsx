@@ -1,10 +1,16 @@
 import React from "react";
 import "./board.css";
+import BoardColumn from "../../components/BoardColumn/BoardColumn";
 
 const Board = () => {
   return (
     <div>
-      <header>Board</header>
+      <header className="section-header">Board</header>
+      <div className="board-frame">
+        <BoardColumn />
+        <BoardColumn />
+        <BoardColumn />
+      </div>
     </div>
   );
 };

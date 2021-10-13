@@ -1,0 +1,23 @@
+.column-container {
+  flex-grow: 1;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.column-container:not(:last-child) {
+  border-right: 3px dotted rebeccapurple;
+}
+
+.column-header {
+  font-size: 1.5rem;
+}
+
+.column-content {
+  height: 90%;
+  overflow-y: scroll;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.column-content > * {
+}

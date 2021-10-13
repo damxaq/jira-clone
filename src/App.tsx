@@ -3,7 +3,7 @@ import Board from "./views/Board/Board";
 
 function App() {
   return (
-    <div>
+    <div className="main-container">
       <TicketList />
       <Board />
     </div>

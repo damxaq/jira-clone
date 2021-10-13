@@ -1,4 +1,35 @@
 body {
   background-color: rgb(28, 32, 43);
   color: white;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  overflow-y: hidden;
+}
+
+.main-container {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.main-container > * {
+  height: 50%;
+  max-height: 50%;
+  position: relative;
+}
+
+.section-header {
+  font-size: 2rem;
+  top: 0;
+  padding: 1rem;
+  white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: yellow;
 }
