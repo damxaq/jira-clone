@@ -10,9 +10,18 @@ const TicketList = () => {
       <header className="section-header">Ticket List</header>
       <div className="tickets-frame">
         {todos &&
-          todos.map((todo) => (
-            <TodoCard key={todo.id} todo={todo} fullCard={true} />
-          ))}
+          todos
+            .sort((a, b) => {
+              if (a.status > b.status) {
+                return -1;
+              } else if (a.status < b.status) {
+                return 1;
+              }
+              return 0;
+            })
+            .map((todo) => (
+              <TodoCard key={todo.id} todo={todo} fullCard={true} />
+            ))}
       </div>
     </div>
   );

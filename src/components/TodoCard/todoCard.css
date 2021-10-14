@@ -6,6 +6,11 @@
   justify-content: space-between;
 }
 
+.card-container:hover {
+  cursor: pointer;
+  background-color: rgb(57, 66, 88);
+}
+
 .title {
   width: 100%;
   overflow-x: hidden;

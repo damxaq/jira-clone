@@ -24,7 +24,9 @@ const TodoCard = ({ todo, fullCard }: PropTypes) => {
 
   return (
     <div className="card-container" onClick={handleChangeStatus}>
-      <div className="title">{title}</div>
+      <div className="title" title={title}>
+        {title}
+      </div>
       {fullCard && <div>{status}</div>}
     </div>
   );
