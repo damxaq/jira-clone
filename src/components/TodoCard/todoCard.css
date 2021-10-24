@@ -4,6 +4,7 @@
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .card-container:hover {
@@ -16,4 +17,19 @@
   overflow-x: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.title:first-letter {
+  text-transform: uppercase;
+}
+
+.image {
+  height: 30px;
+  width: 30px;
+  margin-right: 1rem;
+}
+
+.image img {
+  height: 100%;
+  border-radius: 50%;
 }

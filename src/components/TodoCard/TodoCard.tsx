@@ -9,7 +9,7 @@ interface PropTypes {
 
 const TodoCard = ({ todo, fullCard }: PropTypes) => {
   const { todos, setTodos } = useGlobalContext();
-  const { status, title, id } = todo;
+  const { status, title, id, userImage } = todo;
 
   const handleChangeStatus = () => {
     if (status !== TodoStatus.DONE) {
@@ -24,6 +24,9 @@ const TodoCard = ({ todo, fullCard }: PropTypes) => {
 
   return (
     <div className="card-container" onClick={handleChangeStatus}>
+      <div className="image">
+        <img src={userImage} alt={title} />
+      </div>
       <div className="title" title={title}>
         {title}
       </div>
